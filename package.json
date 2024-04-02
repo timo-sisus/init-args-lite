@@ -1,0 +1,32 @@
+{
+  "name": "com.sisus.init-args-lite",
+  "version": "1.3.3",
+  "displayName": "Init(args) Lite",
+  "description": "Init(args) Lite is a free version of the Init(args) dependency injection framework. It extends the MonoBehaviour class with the ability to receive arguments during initialization.",
+  "unity": "2021.3",
+  "unityRelease": "4f1",
+  "documentationUrl": "https://docs.sisus.co/init-args/",
+  "changelogUrl": "https://assetstore.unity.com/packages/tools/utilities/init-args-200530#releases",
+  "licensesUrl": "https://unity.com/legal/as-terms",
+  "icon": ".icon.png",
+  "dependencies": {},
+ "keywords": [
+    "Dependency Injection",
+	"DI",
+	"Pure Dependency Injection",
+	"Inversion of Control",
+	"IOC",
+	"Dependency Inversion",
+	"SOLID",
+    "Instantiate",
+    "Add Component",
+    "Type-Safe",
+	"Parameters",
+	"Arguments"
+  ],
+  "author": {
+    "name": "Sisus",
+    "email": "support@sisus.com",
+    "url": "https://assetstore.unity.com/publishers/41398"
+  }
+}
