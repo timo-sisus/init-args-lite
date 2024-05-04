@@ -20,7 +20,46 @@ This approach has various benefits, such as solid performance compared to reflec
 * `AddComponent` with upto twelve arguments.
 * `x != Null` - easily test if an interface type variable contains a null or destroyed reference.
 
-# Links
+## Example
+### Component
+```C#
+public class TextDisplayer : MonoBehaviour<StringEvent, Text>
+{
+    [SerializeField] StringEvent stringEvent;
+    [SerializeField] Text text;
+ 
+    protected override void Init(StringEvent stringEvent, Text text) // <- dependencies received here
+    {
+        this.stringEvent = stringEvent;
+        this.text = text;
+    }
+ 
+    void OnEnable() => stringEvent.AddListener(OnEventRaised);
+    void OnDisable() => stringEvent.RemoveListener(OnEventRaised);
+    void OnEventRaised(string value) => text.text = value;
+}
+```
+
+### Test
+```C#
+[SetUp]
+public void Setup()
+{
+    stringEvent = new StringEvent();
+    var gameObject = new GameObject();
+    text = gameObject.AddComponent<Text>();
+    gameObject.AddComponent(out textDisplayer, stringEvent, text);  // <- dependencies injected here
+}
+ 
+[Test]
+public void RaisingStringEventUpdatesDisplayedText()
+{
+    stringEvent.Raise("Test");
+    Assert.AreEqual("Test", text.text);
+}
+```
+
+## Links
 * [Asset Store](https://assetstore.unity.com/packages/slug/280938)
 * [Full Version](https://assetstore.unity.com/packages/tools/utilities/init-args-200530)
 * [Forum](https://forum.unity.com/threads/init-args-the-practical-di-framework.1215084/)
