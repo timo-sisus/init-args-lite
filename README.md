@@ -1,4 +1,4 @@
-# Init(args) Lite
+![init-args-lite](https://github.com/SisusCo/init-args-lite/assets/45103521/b21ffc42-5f2e-4144-b7a4-99c486d51b48)
 
 ## What is Init(args) Lite?
 Init(args) Lite is a free version of the [Init(args) dependency injection framework](https://assetstore.unity.com/packages/tools/utilities/init-args-200530).
